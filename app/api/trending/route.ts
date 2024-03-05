@@ -1,7 +1,8 @@
-export type CoinData = {
-    name: string;
+export type TrendingCoin = {
     symbol: string;
     thumb: string;
+    price: number;
+    sparkline: string;
     priceChangePercentage: {
       toFixed(arg0: number): import("react").ReactNode;
       usd: number;
@@ -20,14 +21,15 @@ export async function GET(request: Request) {
 
     const data = await response.json();
     
-    const top3TrendingCoins: CoinData[] = data.coins.slice(0, 3).map((coin: any) => ({
-        name: coin.item.name,
+    const top7TrendingCoins: TrendingCoin[] = data.coins.map((coin: any) => ({
+        price: coin.item.data.price,
         symbol: coin.item.symbol,
         thumb: coin.item.thumb,
         priceChangePercentage: coin.item.data.price_change_percentage_24h.usd,
+        sparkline: coin.item.data.sparkline,
       }));
     
-      return new Response(JSON.stringify(top3TrendingCoins), {
+      return new Response(JSON.stringify(top7TrendingCoins), {
         headers: { "Content-Type": "application/json" },
       });
   } catch (error: any) {
