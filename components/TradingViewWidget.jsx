@@ -1,7 +1,7 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 
-export default function TradingViewWidget() {
+function TradingViewWidget() {
   const container = useRef();
 
   useEffect(
@@ -18,11 +18,11 @@ export default function TradingViewWidget() {
             ]
           ],
           "chartOnly": false,
-          "width": "100%",
-          "height": "100%",
+          "width": 550,
+          "height": 400,
           "locale": "en",
           "colorTheme": "light",
-          "autosize": true,
+          "autosize": false,
           "showVolume": false,
           "showMA": false,
           "hideDateRanges": false,
@@ -62,14 +62,10 @@ export default function TradingViewWidget() {
 
   return (
     <div className="tradingview-widget-container" ref={container}>
-      <div className="tradingview-widget-container__widget"> 
-      </div>
-      <div className="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span className="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div>
+      <div className="tradingview-widget-container__widget"></div>
+      <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span className="blue-text">Track all markets on TradingView</span></a></div>
     </div>
   );
 }
 
+export default memo(TradingViewWidget);
