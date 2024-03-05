@@ -1,6 +1,7 @@
-type CoinData = {
+export type CoinData = {
     name: string;
     symbol: string;
+    thumb: string;
     priceChangePercentage: {
       usd: number;
     };
@@ -21,6 +22,7 @@ export async function GET(request: Request) {
     const top3TrendingCoins: CoinData[] = data.coins.slice(0, 3).map((coin: any) => ({
         name: coin.item.name,
         symbol: coin.item.symbol,
+        thumb: coin.item.thumb,
         priceChangePercentage: coin.item.data.price_change_percentage_24h.usd,
       }));
     
