@@ -4,6 +4,7 @@ import { CoinData } from '@/app/api/getCoins/route';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { ArrowRight } from 'lucide-react';
 
 const TrendingCoinsPage: React.FC = () => {
   const [trendingCoins, setTrendingCoins] = useState<CoinData[]>([]);
@@ -28,24 +29,26 @@ const TrendingCoinsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className='flex flex-col py-4 sm:hidden md:block'>
+    <div className='hidden md:flex flex-col w-full gap-3'>
       
-      <Card className='w-1/2 bg-blue-600 text-white p-4 mb-6'>
+      <Card className='w-full bg-blue-600 text-neutral-100 p-4'>
         <CardHeader className='text-center'>
           <CardTitle>Get Started With KoinX for FREE</CardTitle>
           <CardDescription className='text-white p-2'>With our range of features that you can equip for free, KoinX allows you to be more educated and aware of your tax reports.</CardDescription>
         </CardHeader>
         <CardContent className='flex flex-col items-center'>
           <Image src="/search.svg" alt="img" height={200} width={200}/>
-          <Button className='bg-white text-black hover:bg-blue-200 mt-10'>Get Started for Free -&gt;</Button>
-        </CardContent>
+          <Button className="bg-white text-black hover:bg-white/90 mt-10 flex items-center justify-center">
+            Get Started for Free <ArrowRight className="h-4 w-4 ml-1" />
+          </Button>        
+          </CardContent>
       </Card>
 
-      <Card className='w-1/2'>
-        <CardContent className="flex flex-col aspect-rectangle p-2">
+      <Card className='w-full p-3 flex flex-col items-start bg-neutral-100'>
+        <CardContent className="grid grid-rows-4">
           <h1 className='text-2xl font-semibold'>Trending Coins (24h)</h1>
           {trendingCoins.map((coin) => (
-            <div key={coin.name} className='flex flex-row p-2'>
+            <div key={coin.name} className='grid grid-cols-3 items-center overflow-hidden'>
               <Image src={coin.thumb} alt="thumb" height={20} width={40}/>
               <h2 className='text-lg text-bold p-2'>
                 {coin.name} ({coin.symbol})

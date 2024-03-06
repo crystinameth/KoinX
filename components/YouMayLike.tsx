@@ -35,12 +35,11 @@ const YouMayLikePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full whitespace-nowrap rounded-md mb-4">
       <Carousel
         opts={{
           align: "start",
         }}
-        className="w-full max-w-auto"
+        className="w-full rounded-md"
       >
         <CarouselContent>
           {trendingCoins.map((coin) => (
@@ -50,8 +49,8 @@ const YouMayLikePage: React.FC = () => {
             >
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex flex-col aspect-rectangle p-2">
-                    <h2 className="text-xl font-semibold p-3 justify-between flex flex-row">
+                  <CardContent className="grid grid-rows-3 aspect-rectangle p-2">
+                    <h2 className="text-xl font-semibold grid grid-cols-3 overflow-hidden items-center">
                       <Image
                         src={coin.thumb}
                         alt="thumb"
@@ -63,7 +62,7 @@ const YouMayLikePage: React.FC = () => {
                         {coin.priceChangePercentage.toFixed(2)}%
                       </Button>
                     </h2>
-                    <h2 className="text-2xl font-bold p-3">{coin.price}</h2>
+                    <h2 className="text-2xl font-bold p-3 overflow-hidden">{coin.price}</h2>
                       <Image
                       src={coin.sparkline}
                       alt="graph"
@@ -79,7 +78,6 @@ const YouMayLikePage: React.FC = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </div>
   );
 };
 
