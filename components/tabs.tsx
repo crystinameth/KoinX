@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { CatIcon, InfoIcon } from "lucide-react";
+import { CatIcon, DollarSign, Hash, InfoIcon, Percent } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -17,6 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { Progress } from "@/components/ui/progress"
 
 export function TabsKoin() {
   return (
@@ -81,7 +82,7 @@ export function TabsKoin() {
               Already Holding Bitcoin?
             </div>
             <div className="flex sm:flex-col md:flex-row items-center gap-4">
-              <Card className="bg-pink-300 max-w-sm">
+              <Card className="bg-pink-300 max-w-screen-sm">
                 <CardContent className="grid grid-cols-2 items-center p-3">
                   <Image src="/token.webp" alt="img" height={100} width={100} />
                   <div className="grid grid-rows-2 items-center text-white">
@@ -92,7 +93,7 @@ export function TabsKoin() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-blue-300 max-w-sm">
+              <Card className="bg-blue-300 max-w-screen-sm">
                 <CardContent className="grid grid-cols-2 items-center p-3">
                   <Image src="/token.webp" alt="img" height={100} width={100} />
                   <div className="grid grid-rows-2 items-center text-white">
@@ -119,13 +120,73 @@ export function TabsKoin() {
         <Card>
           <CardHeader>
             <CardTitle>Fundamentals</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="space-y-1"></div>
-            <div className="space-y-1"></div>
+            <div className="space-y-2">
+              <h1 className="text-xl font-semibold flex gap-2">
+                Performance
+              </h1>
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-row gap-3 text-md ">
+                  Today&apos;s Low 46,930.22
+                  <Progress value={75} />
+                  Today&apos;s High 49,343.83
+                </div>
+                <div className="flex flex-row gap-3 text-md">
+                  52W Low 16,930.22
+                  <Progress value={65} />
+                  52W High 49,743.83
+                </div>
+              </div>
+            </div>
+            <Separator/>
+            <div className="space-y-4">
+              <h1 className="text-xl font-semibold flex gap-y-4">
+                Fundamentals <InfoIcon w-2 h-2 fill-primary />
+              </h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">Bitcoin Price</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>16,757.67</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">24h Low / 24h High</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>16,757.67 / <DollarSign className="w-4"/>16,874.12</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">7d Low / 7d High</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>16,382.67 / <DollarSign className="w-4"/>16,874.12</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">Trading Volume</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>23,249,202,782</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">Market Cap Rank</h1>
+                      <h1 className="flex font-sans"><Hash className="w-4"/>1</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">Market Cap</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>323,507,290,047</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">Market Cap Dominance</h1>
+                      <h1 className="flex font-sans">38.343<Percent className="w-4"/></h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">Volume / Market Cap</h1>
+                      <h1 className="flex font-sans">0.0718</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">All-Time High</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>69,044.77</h1>
+                  </div>
+                  <div className="w-full flex justify-between">
+                      <h1 className="text-neutral-400">All-Time Low</h1>
+                      <h1 className="flex font-sans"><DollarSign className="w-4"/>67.81</h1>
+                  </div>                
+              </div>
+            </div>
           </CardContent>
         </Card>
       </TabsContent>

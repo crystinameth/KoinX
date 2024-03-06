@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <main className="flex flex-col w-full min-h-screen p-20 bg-secondary md:max-w-screen-2xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-7 gap-3 py-6 items-center justify-between h-full w-full">
-      <div className="w-full h-full col-span-5">
+      <div className="w-full col-span-5">
          <TradingViewWidget />
       </div> 
-      <div className="w-full col-span-2">
+      <div className="w-full col-span-2 sm:order-last ">
         <TrendingCoinsPage />
       </div> 
       </div>
