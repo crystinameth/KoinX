@@ -22,10 +22,8 @@ import { Progress } from "@/components/ui/progress"
 export function TabsKoin() {
   return (
     <Tabs defaultValue="overview" className="max-w-5xl">
-      <TabsList className="grid md:grid-cols-7 gap-x-3 h-full">
-        <TabsTrigger value="overview" className="w-full">
-          Overview
-        </TabsTrigger>
+      <TabsList className="grid grid-cols-1 sm:grid-cols-7 gap-x-3 overflow-x-auto h-16 sm:h-auto">
+        <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="fundamentals">Fundamentals</TabsTrigger>
         <TabsTrigger value="news">News Insights</TabsTrigger>
         <TabsTrigger value="sentiments">Sentiments</TabsTrigger>

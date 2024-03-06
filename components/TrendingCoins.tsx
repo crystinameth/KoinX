@@ -44,7 +44,7 @@ const TrendingCoinsPage: React.FC = () => {
           </CardContent>
       </Card>
 
-      <Card className='w-full p-3 flex flex-col items-start bg-neutral-100'>
+      <Card className='w-full p-3 flex flex-col items-start bg-white'>
         <CardContent className="grid grid-rows-4">
           <h1 className='text-2xl font-semibold'>Trending Coins (24h)</h1>
           {trendingCoins.map((coin) => (
