@@ -4,18 +4,27 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import { CatIcon, InfoIcon } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
-export function TabsDemo() {
+export function TabsKoin() {
   return (
-    <Tabs defaultValue="overview" className="w-1/2">
-      <TabsList className="grid w-full grid-cols-7">
-        <TabsTrigger value="overview">Overview</TabsTrigger>
+    <Tabs defaultValue="overview" className="max-w-5xl">
+      <TabsList className="grid md:grid-cols-7 gap-x-3 h-full">
+        <TabsTrigger value="overview" className="w-full">
+          Overview
+        </TabsTrigger>
         <TabsTrigger value="fundamentals">Fundamentals</TabsTrigger>
         <TabsTrigger value="news">News Insights</TabsTrigger>
         <TabsTrigger value="sentiments">Sentiments</TabsTrigger>
@@ -30,34 +39,78 @@ export function TabsDemo() {
             <CardTitle>About Bitcoin</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="space-y-1">What is Bitcoin?</div>
-            <p>
+            <div className="space-y-1 text-lg font-semibold">
+              What is Bitcoin?
+            </div>
+            <p className="text-justify">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Perspiciatis voluptas doloribus rerum similique sequi provident
               impedit id enim debitis, autem nisi, voluptatibus laudantium odit
               fugiat consequatur iure tenetur eius nesciunt.
             </p>
             <Separator />
-            <div className="space-y-1">Lorem ipsum dolor sit amet</div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sequi perferendis odio, dignissimos reprehenderit facilis doloribus aliquid, dolores, doloremque assumenda atque voluptates repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sequi perferendis odio, dignissimos reprehenderit facilis doloribus aliquid, dolores, doloremque assumenda atque voluptates repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sequi perferendis odio, dignissimos reprehenderit facilis doloribus aliquid, dolores, doloremque assumenda atque voluptates repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sequi perferendis odio, dignissimos reprehenderit facilis doloribus aliquid, dolores, doloremque assumenda atque voluptates repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?</p>
+            <div className="space-y-1 text-lg font-semibold">
+              Lorem ipsum dolor sit amet
+            </div>
+            <p className="text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              sequi perferendis odio, dignissimos reprehenderit facilis
+              doloribus aliquid, dolores, doloremque assumenda atque voluptates
+              repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?
+            </p>
+            <p className="text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              sequi perferendis odio, dignissimos reprehenderit facilis
+              doloribus aliquid, dolores, doloremque assumenda atque voluptates
+              repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?
+            </p>
+            <p className="text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              sequi perferendis odio, dignissimos reprehenderit facilis
+              doloribus aliquid, dolores, doloremque assumenda atque voluptates
+              repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?
+            </p>
+            <p className="text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+              sequi perferendis odio, dignissimos reprehenderit facilis
+              doloribus aliquid, dolores, doloremque assumenda atque voluptates
+              repellendus accusantium ipsum ipsa corporis? Nobis, corrupti sint?
+            </p>
             <Separator />
-            <div className="space-y-1">Already Holding Bitcoin?</div>
-            <div className="flex flex-row">
-            <Card>
-                <CardContent className="flex flex-row">
-                    <Image src="/token.webp" alt="img" height={100} width={100} />
-                    <div className="flex flex-col items-center text-white">
-                        Calculate your Profits
-                        <Button className="bg-white text-black">Check now -&gt;</Button>
-                    </div>
+            <div className="space-y-1 text-lg font-semibold">
+              Already Holding Bitcoin?
+            </div>
+            <div className="flex sm:flex-col md:flex-row items-center gap-4">
+              <Card className="bg-pink-300 max-w-sm">
+                <CardContent className="grid grid-cols-2 items-center p-3">
+                  <Image src="/token.webp" alt="img" height={100} width={100} />
+                  <div className="grid grid-rows-2 items-center text-white">
+                    <h1 className="text-xl">Calculate your Profits</h1>
+                    <Button className="bg-white text-black hover:bg-neutral-200">
+                      Check now -&gt;
+                    </Button>
+                  </div>
                 </CardContent>
-            </Card>
+              </Card>
+              <Card className="bg-blue-300 max-w-sm">
+                <CardContent className="grid grid-cols-2 items-center p-3">
+                  <Image src="/token.webp" alt="img" height={100} width={100} />
+                  <div className="grid grid-rows-2 items-center text-white">
+                    <h1 className="text-xl">Calculate your tax liability</h1>
+                    <Button className="bg-white text-black hover:bg-neutral-200">
+                      Check now -&gt;
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
             <Separator />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, natus inventore? Nesciunt maxime dolorem ad possimus quidem neque tenetur labore obcaecati exercitationem, dolores iusto ullam placeat praesentium eos? Nulla, illo.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
+              natus inventore? Nesciunt maxime dolorem ad possimus quidem neque
+              tenetur labore obcaecati exercitationem, dolores iusto ullam
+              placeat praesentium eos? Nulla, illo.
+            </p>
           </CardContent>
         </Card>
       </TabsContent>
@@ -80,9 +133,9 @@ export function TabsDemo() {
       <TabsContent value="news">
         <Card>
           <CardHeader>
-            <CardTitle>Fundamentals</CardTitle>
+            <CardTitle>Top Stories</CardTitle>
             <CardDescription>
-              Change your password here. After saving, you'll be logged out.
+              News!!!
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -95,14 +148,117 @@ export function TabsDemo() {
       <TabsContent value="sentiments">
         <Card>
           <CardHeader>
-            <CardTitle>Fundamentals</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, you'll be logged out.
-            </CardDescription>
+            <CardTitle>Sentiment</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="space-y-1"></div>
-            <div className="space-y-1"></div>
+            <div className="space-y-2">
+              <h1 className="text-xl font-semibold flex gap-2">
+                Key Events <InfoIcon w-2 h-2 fill-primary />
+              </h1>
+              <div className="w-full p-4">
+                <Carousel
+                  opts={{
+                    align: "start",
+                  }}
+                  className="w-full rounded-md"
+                >
+                  <CarouselContent>
+                    <CarouselItem className="md:basis-1 lg:basis-1/2">
+                      <Card className="max-w-lg bg-blue-200">
+                        <CardContent className="grid grid-cols-6">
+                          <CatIcon className="h-12 w-12 mt-10"/>
+                        <div className="grid grid-rows-2 items-center col-span-5">
+                          <h1 className="font-semibold text-2xl">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                          </h1>
+                          <p className="text-justify">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Fuga sit tempora odit sed voluptate corrupti
+                            harum suscipit incidunt. At ea cumque quidem
+                            suscipit officia consectetur ipsa id ratione veniam
+                            nihil?
+                          </p>
+                        </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1 lg:basis-1/2">
+                      <Card className="max-w-lg bg-blue-200">
+                        <CardContent className="grid grid-cols-6">
+                          <CatIcon className="h-12 w-12 mt-10"/>
+                        <div className="grid grid-rows-2 items-center col-span-5">
+                          <h1 className="font-semibold text-2xl">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                          </h1>
+                          <p className="text-justify">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Fuga sit tempora odit sed voluptate corrupti
+                            harum suscipit incidunt. At ea cumque quidem
+                            suscipit officia consectetur ipsa id ratione veniam
+                            nihil?
+                          </p>
+                        </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1 lg:basis-1/2">
+                      <Card className="max-w-lg bg-blue-200">
+                        <CardContent className="grid grid-cols-6">
+                          <CatIcon className="h-12 w-12 mt-10"/>
+                        <div className="grid grid-rows-2 items-center col-span-5">
+                          <h1 className="font-semibold text-2xl">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                          </h1>
+                          <p className="text-justify">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Fuga sit tempora odit sed voluptate corrupti
+                            harum suscipit incidunt. At ea cumque quidem
+                            suscipit officia consectetur ipsa id ratione veniam
+                            nihil?
+                          </p>
+                        </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                    <CarouselItem className="md:basis-1 lg:basis-1/2">
+                      <Card className="max-w-lg bg-blue-200">
+                        <CardContent className="grid grid-cols-6">
+                          <CatIcon className="h-12 w-12 mt-10"/>
+                        <div className="grid grid-rows-2 items-center col-span-5">
+                          <h1 className="font-semibold text-2xl">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                          </h1>
+                          <p className="text-justify">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Fuga sit tempora odit sed voluptate corrupti
+                            harum suscipit incidunt. At ea cumque quidem
+                            suscipit officia consectetur ipsa id ratione veniam
+                            nihil?
+                          </p>
+                        </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            </div>
+            <Separator />
+            <div className="space-y-2">
+              <h1 className="text-xl font-semibold flex gap-2">
+                Analyst Estimates <InfoIcon w-2 h-2 fill-primary />
+              </h1>
+              <div className="flex flex-row gap-6 items-center">
+                <Image src="/token.webp" alt="dummy" width={200} height={200}/>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti nihil facere deserunt voluptate, culpa porro maxime esse officiis tempore dolores commodi doloribus modi iste assumenda hic iure ducimus atque eos!</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </TabsContent>
@@ -113,7 +269,7 @@ export function TabsDemo() {
             <CardTitle>Team</CardTitle>
             <CardDescription>Meet our team!</CardDescription>
           </CardHeader>
-          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex flex-row">
+          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex sm:flex-col md:flex-row">
             <div className="flex flex-col items-center max-h-50">
               <Image
                 src="/zayn.webp"
@@ -134,7 +290,7 @@ export function TabsDemo() {
               labore dignissimos officia. Cumque?
             </div>
           </CardContent>
-          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex flex-row">
+          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex sm:flex-col md:flex-row">
             <div className="flex flex-col items-center max-h-50">
               <Image
                 src="/zayn.webp"
@@ -155,7 +311,7 @@ export function TabsDemo() {
               labore dignissimos officia. Cumque?
             </div>
           </CardContent>
-          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex flex-row">
+          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex sm:flex-col md:flex-row">
             <div className="flex flex-col items-center max-h-50">
               <Image
                 src="/zayn.webp"
@@ -182,9 +338,9 @@ export function TabsDemo() {
       <TabsContent value="technicals">
         <Card>
           <CardHeader>
-            <CardTitle>Fundamentals</CardTitle>
+            <CardTitle>Technicals</CardTitle>
             <CardDescription>
-              Change your password here. After saving, you'll be logged out.
+              Technical details here!
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">

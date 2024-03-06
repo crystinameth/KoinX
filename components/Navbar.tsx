@@ -12,7 +12,7 @@ return (
             <Image src="/Koinx.png" alt="logo" height={40} width={100} />
             </Link>
         </div>
-        <div className="sm:hidden md:flex items-center px-10">
+        <div className="hidden md:flex items-center px-10">
             <h1 className="text-lg font-semibold px-3">Crypto Taxes</h1>
             <h1 className="text-lg font-semibold px-3">Free Tools</h1>
             <h1 className="text-lg font-semibold px-3">Resource Center</h1>
