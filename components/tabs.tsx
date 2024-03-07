@@ -21,11 +21,10 @@ import { Progress } from "@/components/ui/progress"
 
 export function TabsKoin() {
   return (
-    <Tabs defaultValue="overview" className="max-w-5xl">
-      <TabsList className="grid grid-cols-1 sm:grid-cols-7 gap-x-3 overflow-x-auto h-16 sm:h-auto">
+    <Tabs defaultValue="overview" className="max-w-full sm:max-w-5xl">
+      <TabsList className="grid grid-cols-6 overflow-x-scroll pt-10 gap-x-20 sm:gap-x-3 h-16 sm:h-auto">
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="fundamentals">Fundamentals</TabsTrigger>
-        <TabsTrigger value="news">News Insights</TabsTrigger>
         <TabsTrigger value="sentiments">Sentiments</TabsTrigger>
         <TabsTrigger value="team">Team</TabsTrigger>
         <TabsTrigger value="technicals">Technicals</TabsTrigger>
@@ -79,8 +78,8 @@ export function TabsKoin() {
             <div className="space-y-1 text-lg font-semibold">
               Already Holding Bitcoin?
             </div>
-            <div className="flex sm:flex-col md:flex-row items-center gap-4">
-              <Card className="bg-pink-300 max-w-screen-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Card className="bg-pink-300 max-w-sm">
                 <CardContent className="grid grid-cols-2 items-center p-3">
                   <Image src="/token.webp" alt="img" height={100} width={100} />
                   <div className="grid grid-rows-2 items-center text-white">
@@ -91,7 +90,7 @@ export function TabsKoin() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-blue-300 max-w-screen-sm">
+              <Card className="bg-blue-300 max-w-sm">
                 <CardContent className="grid grid-cols-2 items-center p-3">
                   <Image src="/token.webp" alt="img" height={100} width={100} />
                   <div className="grid grid-rows-2 items-center text-white">
@@ -225,7 +224,7 @@ export function TabsKoin() {
                     <CarouselItem className="md:basis-1 lg:basis-1/2">
                       <Card className="max-w-lg bg-blue-200">
                         <CardContent className="grid grid-cols-6">
-                          <CatIcon className="h-12 w-12 mt-10"/>
+                          <CatIcon className="h-12 w-12 mt-4 sm:mt-10 col-span-1"/>
                         <div className="grid grid-rows-2 items-center col-span-5">
                           <h1 className="font-semibold text-2xl">
                             Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -245,7 +244,7 @@ export function TabsKoin() {
                     <CarouselItem className="md:basis-1 lg:basis-1/2">
                       <Card className="max-w-lg bg-blue-200">
                         <CardContent className="grid grid-cols-6">
-                          <CatIcon className="h-12 w-12 mt-10"/>
+                          <CatIcon className="h-12 w-12 mt-4 sm:mt-10 col-span-1"/>
                         <div className="grid grid-rows-2 items-center col-span-5">
                           <h1 className="font-semibold text-2xl">
                             Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -265,7 +264,7 @@ export function TabsKoin() {
                     <CarouselItem className="md:basis-1 lg:basis-1/2">
                       <Card className="max-w-lg bg-blue-200">
                         <CardContent className="grid grid-cols-6">
-                          <CatIcon className="h-12 w-12 mt-10"/>
+                          <CatIcon className="h-12 w-12 mt-4 sm:mt-10 col-span-1"/>
                         <div className="grid grid-rows-2 items-center col-span-5">
                           <h1 className="font-semibold text-2xl">
                             Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -285,7 +284,7 @@ export function TabsKoin() {
                     <CarouselItem className="md:basis-1 lg:basis-1/2">
                       <Card className="max-w-lg bg-blue-200">
                         <CardContent className="grid grid-cols-6">
-                          <CatIcon className="h-12 w-12 mt-10"/>
+                          <CatIcon className="h-12 w-12 mt-4 sm:mt-10 col-span-1"/>
                         <div className="grid grid-rows-2 items-center col-span-5">
                           <h1 className="font-semibold text-2xl">
                             Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -313,9 +312,9 @@ export function TabsKoin() {
               <h1 className="text-xl font-semibold flex gap-2">
                 Analyst Estimates <InfoIcon w-2 h-2 fill-primary />
               </h1>
-              <div className="flex flex-row gap-6 items-center">
+              <div className="flex flex-col sm:flex-row gap-6 items-center">
                 <Image src="/token.webp" alt="dummy" width={200} height={200}/>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti nihil facere deserunt voluptate, culpa porro maxime esse officiis tempore dolores commodi doloribus modi iste assumenda hic iure ducimus atque eos!</p>
+                <p className="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti nihil facere deserunt voluptate, culpa porro maxime esse officiis tempore dolores commodi doloribus modi iste assumenda hic iure ducimus atque eos!</p>
               </div>
             </div>
           </CardContent>
@@ -328,7 +327,7 @@ export function TabsKoin() {
             <CardTitle>Team</CardTitle>
             <CardDescription>Meet our team!</CardDescription>
           </CardHeader>
-          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex sm:flex-col md:flex-row">
+          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex flex-col sm:flex-row">
             <div className="flex flex-col items-center max-h-50">
               <Image
                 src="/zayn.webp"
@@ -349,7 +348,7 @@ export function TabsKoin() {
               labore dignissimos officia. Cumque?
             </div>
           </CardContent>
-          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex sm:flex-col md:flex-row">
+          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex flex-col sm:flex-row">
             <div className="flex flex-col items-center max-h-50">
               <Image
                 src="/zayn.webp"
@@ -370,7 +369,7 @@ export function TabsKoin() {
               labore dignissimos officia. Cumque?
             </div>
           </CardContent>
-          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex sm:flex-col md:flex-row">
+          <CardContent className="bg-blue-100 p-4 rounded-lg shadow-md m-4 space-y-2 flex flex-col sm:flex-row">
             <div className="flex flex-col items-center max-h-50">
               <Image
                 src="/zayn.webp"

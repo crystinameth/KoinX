@@ -13,10 +13,10 @@ export const MobileNav = () => {
             <SheetTrigger className="md:hidden pr-4">
                 <Menu />
             </SheetTrigger>
-            <SheetContent side="right" className="p-6 bg-secondary pt-10 w-50">
-            <h1 className="text-lg font-semibold py-3">Crypto Taxes</h1>
-            <h1 className="text-lg font-semibold py-3">Free Tools</h1>
-            <h1 className="text-lg font-semibold py-3">Resource Center</h1>
+            <SheetContent side="right" className="bg-secondary pt-10 gap-y-5 flex flex-col w-1/2">
+            <span className="text-md font-semibold">Crypto Taxes</span>
+            <span className="text-md font-semibold">Free Tools</span>
+            <span className="text-md font-semibold">Resource Center</span>
             <div className="py-4">
                 <Button className="bg-blue-500 font-white">Get Started</Button>
             </div>

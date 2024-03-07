@@ -29,7 +29,7 @@ const TrendingCoinsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className='md:flex flex-col w-full gap-3'>
+    <div className='md:flex flex-col w-full gap-y-3'>
       
       <Card className='w-full bg-blue-600 text-neutral-100 p-4'>
         <CardHeader className='text-center'>

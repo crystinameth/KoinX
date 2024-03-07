@@ -4,12 +4,10 @@ import YouMayLikePage from "@/components/YouMayLike";
 import { TabsKoin } from "@/components/tabs";
 export default function Home() {
   return (
-    <main className="flex flex-col w-full min-h-screen p-20 bg-secondary md:max-w-screen-2xl mx-auto">
-      <div className="grid grid-cols-7 gap-3 justify-between h-full w-full">
-      <div className="w-full col-span-5">
-         <TradingViewWidget />
-      </div> 
-      <div className="w-full col-span-2 hidden sm:block">
+    <main className="flex flex-col w-full min-h-screen p-6 md:p-20 md:max-w-screen-2xl md:mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-7 gap-3 justify-between h-full w-full">
+       
+      <div className="w-full col-span-4 lg:col-span-2 hidden sm:block">
         <TrendingCoinsPage />
       </div> 
       </div>
@@ -24,3 +22,9 @@ export default function Home() {
     </main>
   );
 }
+
+/*
+<div className="w-full h-full col-span-5">
+         <TradingViewWidget />
+      </div>
+*/
