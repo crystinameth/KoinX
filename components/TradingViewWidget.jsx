@@ -1,20 +1,47 @@
 "use client"
-import React, { useEffect, useRef, memo } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
+import { useRouter } from 'next/navigation';
 
 function TradingViewWidget() {
-  const container = useRef();
+  const container = useRef(null);
+  const router = useRouter();
+  const [symbol, setSymbol] = useState('BITSTAMP:BTCUSD'); 
+
+  useEffect( () => {
+      const fetchSymbol = async () => {
+        try {
+          const res = await fetch(`/api/token/${router.query.id}`);
+          const data = await res.json()
+    
+          if(router.query?.id){
+            setSymbol(data.symbol);
+          }
+        } catch ( error) {
+          console.error('Error fetching symbol:', error.message);
+        }
+      };
+       fetchSymbol();
+    }, [router.query?.id]
+  );
+
+
 
   useEffect(
     () => {
+      if(!symbol){
+        return;
+      }
+
       const script = document.createElement("script");
       script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
       script.type = "text/javascript";
       script.async = true;
+
       script.innerHTML = `
         {
           "symbols": [
             [
-              "BITSTAMP:BTCUSD|1D"
+              "${symbol}|1D"
             ]
           ],
           "chartOnly": false,
@@ -55,9 +82,17 @@ function TradingViewWidget() {
           "topColor": "rgba(187, 217, 251, 1)",
           "bottomColor": "rgba(255, 255, 255, 1)"
         }`;
-      container.current.appendChild(script);
-    },
-    []
+
+        if(container.current){
+          container.current.appendChild(script);
+        }
+
+      return () => {
+        if(container.current && container.current.removeChild){
+          container.current.removeChild(script);
+        }
+      };
+    }, [symbol]
   );
 
   return (
