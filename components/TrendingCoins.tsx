@@ -44,16 +44,16 @@ const TrendingCoinsPage: React.FC = () => {
           </CardContent>
       </Card>
 
-      <Card className='w-full p-3 flex flex-col items-start bg-white'>
-        <CardContent className="grid grid-rows-4">
+      <Card className='w-full p-2 flex flex-col items-start bg-white'>
+        <CardContent className="grid grid-rows-4 items-center">
           <h1 className='text-2xl font-semibold'>Trending Coins (24h)</h1>
           {trendingCoins.map((coin) => (
-            <div key={coin.name} className='grid grid-cols-3 items-center overflow-hidden'>
+            <div key={coin.name} className='flex items-center overflow-hidden'>
               <Image src={coin.thumb} alt="thumb" height={20} width={40}/>
-              <h2 className='text-lg text-bold p-2'>
+              <span className='text-md p-2'>
                 {coin.name} ({coin.symbol})
-              </h2>
-                <Button className="percentage-button bg-secondary text-green-500">
+              </span>
+                <Button className="percentage-button bg-secondary text-green-500 size-auto">
                 {coin.priceChangePercentage.toFixed(2)}%
                 </Button>
             </div>

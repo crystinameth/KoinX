@@ -4,7 +4,7 @@ import YouMayLikePage from "@/components/YouMayLike";
 import { TabsKoin } from "@/components/tabs";
 export default function Home() {
   return (
-    <main className="flex flex-col w-full min-h-screen p-6 md:p-20 md:max-w-screen-2xl md:mx-auto">
+    <main className="flex flex-col w-full min-h-screen p-10 md:p-20 md:max-w-screen-2xl md:mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-7 gap-3 justify-between h-full w-full">
        
       <div className="w-full col-span-4 lg:col-span-2 hidden sm:block">

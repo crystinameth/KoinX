@@ -41,28 +41,28 @@ const YouMayLikePage: React.FC = () => {
         }}
         className="w-full rounded-md"
       >
-        <CarouselContent>
+        <CarouselContent className="items-center">
           {trendingCoins.map((coin) => (
             <CarouselItem
               key={coin.price}
-              className="md:basis-1/3 lg:basis-1/6"
+              className="basis-1/2 md:basis-1/3 lg:basis-1/5"
             >
               <div className="p-1">
                 <Card>
                   <CardContent className="grid grid-rows-3 aspect-rectangle p-2">
-                    <h2 className="text-xl font-semibold grid grid-cols-3 overflow-hidden items-center">
+                    <span className="text-md font-semibold flex gap-2 overflow-hidden items-center">
                       <Image
                         src={coin.thumb}
                         alt="thumb"
                         height={20}
-                        width={40}
+                        width={36}
                       />
                       {coin.symbol}
-                      <Button className="percentage-button bg-secondary text-green-500">
+                      <Button className="percentage-button bg-secondary text-green-500 size-auto">
                         {coin.priceChangePercentage.toFixed(2)}%
                       </Button>
-                    </h2>
-                    <h2 className="text-2xl font-bold p-3 overflow-hidden">{coin.price}</h2>
+                    </span>
+                    <span className="text-2xl font-bold p-3 overflow-hidden">{coin.price}</span>
                       <Image
                       src={coin.sparkline}
                       alt="graph"

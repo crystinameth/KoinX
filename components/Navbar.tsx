@@ -6,7 +6,7 @@ import { MobileNav } from "./MobileNav"
 
 export const Navbar = () => {
 return (
-    <div className="fixed w-full border-b px-4 border-primary/10 bg-white h-16">
+    <div className="fixed z-50 w-full border-b px-4 border-primary/10 bg-white h-16">
         <div className="flex items-center justify-between h-full md:max-w-screen-xl md:mx-auto">
             <Link href="/">
             <Image src="/Koinx.png" alt="logo" height={40} width={100} />
